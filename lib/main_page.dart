@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "AA.1",
+          "Suhu App",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: const Color.fromARGB(255, 33, 122, 185),
@@ -31,6 +31,12 @@ class MainPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+               buildMenuButton(
+                context,
+                icon: Icons.videocam,
+                label: "CCTV",
+                page: cctv(),
+              ),
               buildMenuButton(
                 context,
                 icon: Icons.thermostat,
@@ -42,12 +48,6 @@ class MainPage extends StatelessWidget {
                 icon: Icons.monitor_heart,
                 label: "Monitoring",
                 page: MonitoringPage(),
-              ),
-              buildMenuButton(
-                context,
-                icon: Icons.videocam,
-                label: "CCTV",
-                page: cctv(),
               ),
               buildMenuButton(
                 context,
