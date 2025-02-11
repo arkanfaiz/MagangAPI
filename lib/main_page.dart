@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "AA.1",
+          "MANTAP LEE",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: const Color.fromARGB(255, 33, 122, 185),
@@ -22,7 +22,10 @@ class MainPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [const Color.fromARGB(255, 121, 202, 255), const Color.fromARGB(255, 254, 254, 254)],
+            colors: [
+              const Color.fromARGB(255, 121, 202, 255),
+              const Color.fromARGB(255, 254, 254, 254)
+            ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
