@@ -15,7 +15,7 @@ class _MonitoringPageState extends State<MonitoringPage> {
     super.initState();
     _updateTemperature();
     _updateDateTime();
-    Timer.periodic(Duration(minutes: 1), (Timer t) {
+    Timer.periodic(Duration(seconds: 10), (Timer t) {
       _updateTemperature();
     });
   }
@@ -23,7 +23,7 @@ class _MonitoringPageState extends State<MonitoringPage> {
   void _updateTemperature() {
     // Simulate fetching temperature data
     setState(() {
-      _temperature = 25.0; // Replace with actual temperature fetching logic
+      _temperature = 25.0 + (5 * (DateTime.now().second % 2)); // Replace with actual temperature fetching logic
     });
   }
 
@@ -39,29 +39,50 @@ class _MonitoringPageState extends State<MonitoringPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Monitoring Suhu'),
+        title: Text('Monitoring Suhu Gedung AOCC'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Suhu: $_temperature °C',
-              style: TextStyle(fontSize: 24),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Tanggal dan Waktu: $_dateTime',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 40),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text("Kembali ke Menu"),
-            ),
-          ],
+      body: Container(
+        color: Colors.blue, // Set background color to blue
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 10.0,
+                      offset: Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      'Suhu: $_temperature °C',
+                      style: TextStyle(fontSize: 24, color: Colors.black),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'Tanggal dan Waktu: $_dateTime',
+                      style: TextStyle(fontSize: 18, color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Kembali ke Menu"),
+              ),
+            ],
+          ),
         ),
       ),
     );
