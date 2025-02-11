@@ -10,7 +10,7 @@ class suhupage extends StatelessWidget{
     body: Center(
       child: ElevatedButton(onPressed: (){
         Navigator.pop(context);
-      }, child: Text("kembali ke menu"),
+      }, child: Text("kembali ke nu"),
      ),
     ),
     );
