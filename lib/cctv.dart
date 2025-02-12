@@ -5,16 +5,34 @@ class cctv extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CCTV'),
+        title: Text('Dashboard CCTV'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Kemmbali ke menu'),
+      body: GridView.builder(
+        padding: EdgeInsets.all(10.0),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0,
         ),
+        itemCount: 5,
+        itemBuilder: (context, index) {
+          return Container(
+            color: Colors.black,
+            child: Center(
+              child: Text(
+                'CCTV ${index + 1}',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: cctv(),
+  ));
 }
