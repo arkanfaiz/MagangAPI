@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:battery_info/battery_info_plugin.dart';
-import 'package:battery_info/model/android_battery_info.dart';
 
 class suhupage extends StatefulWidget {
   const suhupage({super.key});

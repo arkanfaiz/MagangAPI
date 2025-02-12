@@ -26,7 +26,7 @@ class _MonitoringPageState extends State<MonitoringPage> {
               borderRadius: BorderRadius.circular(8),
             ),
           ),
-          child: Text("Kembali ke Menu"),
+          child: Text("Kembali"),
         ),
       ),
     );
