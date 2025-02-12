@@ -44,7 +44,7 @@ class MainPage extends StatelessWidget {
                 context,
                 icon: Icons.thermostat,
                 label: "Suhu",
-                page: SuhuPage(), // Ensure SuhuPage is defined in suhu.dart
+                page: suhupage(), // Ensure SuhuPage is defined in suhu.dart
               ),
               buildMenuButton(
                 context,
