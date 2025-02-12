@@ -18,7 +18,7 @@ class _MonitoringPageState extends State<MonitoringPage> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text("Kembali ke Menu"),
+          child: Text("Kembali ke Mesnu"),
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             shape: RoundedRectangleBorder(

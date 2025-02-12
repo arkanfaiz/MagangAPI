@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  battery_info: ^1.1.1
+
   flutter_vlc_player: ^7.4.2
 
 dev_dependencies:
