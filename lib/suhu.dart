@@ -40,12 +40,14 @@ class _SuhuPageState extends State<suhupage> {
     super.dispose();
   }
 
-void _updateTemperature() {
-    setState(() {
-      _temperature = 25.0 + (2 * (DateTime.now().second % 2));
-    });
+  void _updateTemperature() async {
+    if (Theme.of(context).platform == TargetPlatform.android) {
+      AndroidBatteryInfo? batteryInfo = await BatteryInfoPlugin().androidBatteryInfo;
+      setState(() {
+        _temperature = (batteryInfo?.temperature ?? 200) / 10.0; // Convert deciCelsius to Celsius
+      });
+    }
   }
-
 
   void _updateDateTime() {
     final now = DateTime.now();
