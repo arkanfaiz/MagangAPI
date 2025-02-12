@@ -34,6 +34,12 @@ class MainPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+               buildMenuButton(
+                context,
+                icon: Icons.videocam,
+                label: "CCTV",
+                page: cctv(),
+              ),
               buildMenuButton(
                 context,
                 icon: Icons.thermostat,
@@ -45,12 +51,6 @@ class MainPage extends StatelessWidget {
                 icon: Icons.monitor_heart,
                 label: "Monitoring",
                 page: MonitoringPage(),
-              ),
-              buildMenuButton(
-                context,
-                icon: Icons.videocam,
-                label: "CCTV",
-                page: cctv(),
               ),
               buildMenuButton(
                 context,
