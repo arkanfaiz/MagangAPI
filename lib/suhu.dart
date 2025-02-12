@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-// import 'package:battery_info/battery_info_plugin.dart';
-// import 'package:battery_info/model/android_battery_info.dart';
+import 'package:battery_info/battery_info_plugin.dart';
+import 'package:battery_info/model/android_battery_info.dart';
 
 class suhupage extends StatefulWidget {
   const suhupage({super.key});
@@ -40,11 +40,13 @@ class _SuhuPageState extends State<suhupage> {
     super.dispose();
   }
 
-void _updateTemperature() {
-    setState(() {
-      _temperature = 25.0 + (5 * (DateTime.now().second % 2));
-    });
-  }
+void _updateTemperature() async {
+  AndroidBatteryInfo? batteryInfo = await BatteryInfoPlugin().androidBatteryInfo;
+  setState(() {
+    _temperature = (batteryInfo?.temperature ?? 0) / 10; // Convert from deci-Celsius
+  });
+}
+
 
 
   void _updateDateTime() {
