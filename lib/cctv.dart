@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'videoplayerwidget.dart';
 
 class Cctv extends StatelessWidget {
-  const Cctv({super.key});
+    const Cctv({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dashboard CCTV'),
+        title: Text('Dashboard Cctv'),
       ),
-      body: const WebView(
-        initialUrl: 'https://lewatmana.com/cam/',
-        javascriptMode: JavascriptMode.unrestricted,
+      body: Center(
+        child: VideoPlayerWidget(
+          videoUrl: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4',
+        ),
       ),
     );
   }
 }
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     home: Cctv(),
   ));
 }
