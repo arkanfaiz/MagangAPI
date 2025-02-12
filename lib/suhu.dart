@@ -23,6 +23,7 @@ class _SuhuPageState extends State<suhupage> {
     super.initState();
     _updateTemperature();
     _updateDateTime();
+
     _temperatureTimer = Timer.periodic(Duration(seconds: 10), (Timer t) {
       _updateTemperature();
     });
@@ -43,7 +44,7 @@ class _SuhuPageState extends State<suhupage> {
     if (Theme.of(context).platform == TargetPlatform.android) {
       AndroidBatteryInfo? batteryInfo = await BatteryInfoPlugin().androidBatteryInfo;
       setState(() {
-        _temperature = (batteryInfo?.temperature ?? 20.0) / 40.0; // Konversi dari deciCelsius ke Celsius
+        _temperature = (batteryInfo?.temperature ?? 200) / 10.0; // Convert deciCelsius to Celsius
       });
     }
   }
@@ -61,87 +62,64 @@ class _SuhuPageState extends State<suhupage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Monitoring Suhu Server AOCC',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.blueAccent,
-        centerTitle: true,
-        elevation: 0,
+       appBar: AppBar(
+      title: Text(
+        'Monitoring Suhu Server AOCC',
+        style: TextStyle(fontWeight: FontWeight.bold),
       ),
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        color: Colors.blue.shade50,
-        child: Center(
+      backgroundColor: Colors.blueAccent,
+      centerTitle: true,
+      elevation: 0,
+    ),
+      backgroundColor: Colors.blue.shade50,
+      body: Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.9, // Adjust container width
+          height: MediaQuery.of(context).size.height * 0.7, // Adjust container height
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+            children: [
+              Text(
+                '$_temperature°C',
+                style: TextStyle(
+                  fontSize: 100, // Bigger temperature font size
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueAccent,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        '$_temperature°C',
-                        style: TextStyle(
-                          fontSize: 40,
-                          color: Colors.blueAccent,
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      Text(
-                        'Hari',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black54,
-                        ),
-                      ),
-                      Text(
-                        _day,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Tanggal',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black54,
-                        ),
-                      ),
-                      Text(
-                        _date,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Waktu',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black54,
-                        ),
-                      ),
-                      Text(
-                        _time,
-                        style: TextStyle(
-                          fontSize: 36,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.redAccent,
-                        ),
-                      ),
-                    ],
-                  ),
+              ),
+              SizedBox(height: 30),
+              Text(
+                _day,
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Text(
+                _date,
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black54,
+                ),
+              ),
+              Text(
+                _time,
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.redAccent,
                 ),
               ),
               SizedBox(height: 30),

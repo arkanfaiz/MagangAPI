@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class cctv extends StatelessWidget {
+  const cctv({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
