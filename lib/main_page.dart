@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/cctv.dart';
+import 'package:flutter_application_1/Cctv.dart';
 import 'package:flutter_application_1/suhu.dart'; // Ensure suhupage is defined in this file
 import 'package:flutter_application_1/monitoring.dart'; // Ensure MonitoringPage is defined in this file
 import 'package:flutter_application_1/laporan.dart';
@@ -37,8 +37,8 @@ class MainPage extends StatelessWidget {
                buildMenuButton(
                 context,
                 icon: Icons.videocam,
-                label: "CCTV",
-                page: cctv(),
+                label: "Cctv",
+                page: Cctv(),
               ),
               buildMenuButton(
                 context,

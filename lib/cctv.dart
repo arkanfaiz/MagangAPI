@@ -1,33 +1,19 @@
 import 'package:flutter/material.dart';
+import 'videoplayerwidget.dart';
 
-class cctv extends StatelessWidget {
-  const cctv({super.key});
+class Cctv extends StatelessWidget {
+    const Cctv({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dashboard CCTV'),
+        title: Text('Dashboard Cctv'),
       ),
-      body: GridView.builder(
-        padding: EdgeInsets.all(10.0),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 10.0,
+      body: Center(
+        child: VideoPlayerWidget(
+          videoUrl: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4',
         ),
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return Container(
-            color: Colors.black,
-            child: Center(
-              child: Text(
-                'CCTV ${index + 1}',
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-            ),
-          );
-        },
       ),
     );
   }
@@ -35,6 +21,6 @@ class cctv extends StatelessWidget {
 
 void main() {
   runApp(MaterialApp(
-    home: cctv(),
+    home: Cctv(),
   ));
 }
