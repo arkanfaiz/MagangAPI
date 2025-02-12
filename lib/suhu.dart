@@ -40,6 +40,7 @@ class _SuhuPageState extends State<suhupage> {
     super.dispose();
   }
 
+
 void _updateTemperature() async {
   AndroidBatteryInfo? batteryInfo = await BatteryInfoPlugin().androidBatteryInfo;
   setState(() {
