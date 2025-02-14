@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Cctv.dart';
 import 'package:flutter_application_1/suhu.dart'; // Ensure suhupage is defined in this file
-import 'package:flutter_application_1/monitoring.dart'; // Ensure MonitoringPage is defined in this file
+import 'package:flutter_application_1/monitoring.dart'; // Ensure monitoringpage is defined in this file
 import 'package:flutter_application_1/laporan.dart';
 
 class MainPage extends StatelessWidget {
@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "MANTAP LEE",
+          "Suhu App",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: const Color.fromARGB(255, 33, 122, 185),
@@ -44,13 +44,13 @@ class MainPage extends StatelessWidget {
                 context,
                 icon: Icons.thermostat,
                 label: "Suhu",
-                page: suhupage(), // Ensure SuhuPage is defined in suhu.dart
+                page: suhupage(), // Ensure suhupage is defined in suhu.dart
               ),
               buildMenuButton(
                 context,
                 icon: Icons.monitor_heart,
                 label: "Monitoring",
-                page: MonitoringPage(),
+                page: monitoringpage(),
               ),
               buildMenuButton(
                 context,
