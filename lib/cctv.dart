@@ -51,7 +51,7 @@ class Cctv extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10.0),
                           child: VideoPlayerWidget(
-                            videoUrl: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4',
+                            videoUrl: 'https://cdn.discordapp.com/attachments/1236343301620367380/1337681732740190218/lv_0_20250207234103.mp4?ex=67b38972&is=67b237f2&hm=5773a238e5c961f1c76a0a156e037dd21d844b1a729587c0a8766247571c28e2&',
                           ),
                         ),
                       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Cctv.dart';
-import 'package:flutter_application_1/suhu.dart'; // Ensure suhupage is defined in this file
+import 'package:flutter_application_1/suhu.dart'; // Ensure suhupagee is defined in this file
 import 'package:flutter_application_1/monitoring.dart'; // Ensure monitoringpage is defined in this file
 import 'package:flutter_application_1/laporan.dart';
 
@@ -44,7 +44,7 @@ class MainPage extends StatelessWidget {
                 context,
                 icon: Icons.thermostat,
                 label: "Suhu",
-                page: suhupage(), // Ensure suhupage is defined in suhu.dart
+                page: suhupage(), // Ensure suhupagee is defined in suhu.dart
               ),
               buildMenuButton(
                 context,

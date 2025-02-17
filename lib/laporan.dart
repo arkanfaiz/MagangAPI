@@ -46,7 +46,7 @@ class laporanpage extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: DataTable(
                         columnSpacing: 20,
-                        headingRowColor: MaterialStateColor.resolveWith((states) => Colors.blue),
+                        headingRowColor: WidgetStateColor.resolveWith((states) => Colors.blue),
                         columns: const [
                           DataColumn(label: Text('Suhu', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white))),
                           DataColumn(label: Text('Hari', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white))),
